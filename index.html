@@ -530,31 +530,12 @@ document.addEventListener('click', function() {
                 stikerScale.classList.remove("scale0");
                 stikerScale.classList.add("scale1");
 
-                // Call the typing animation
                 setTimeout(katanimasi, 100);
 
-                // ✅ Button create and show
-                let nextButtonDiv = document.createElement("div");
-                nextButtonDiv.style.textAlign = "center";
-                nextButtonDiv.style.marginTop = "20px";
-
-                let nextButton = document.createElement("button");
-                nextButton.textContent = "Click Here for Surprise 🎉";
-                nextButton.style.padding = "10px 20px";
-                nextButton.style.fontSize = "16px";
-                nextButton.style.borderRadius = "8px";
-                nextButton.style.cursor = "pointer";
-                nextButton.style.backgroundColor = "#ff0066";
-                nextButton.style.color = "white";
-                nextButton.style.border = "none";
-
-                // Button click -> open index1.html
-                nextButton.onclick = function() {
-                    window.location.href = "index1.html"; // dusre page ka naam
-                }
-
-                nextButtonDiv.appendChild(nextButton);
-                document.body.appendChild(nextButtonDiv);
+                // ✅ 2 second wait ke baad dusre page par redirect
+                setTimeout(function(){
+                    window.location.href = "index1.html"; // dusra page
+                }, 2000); // 2000ms = 2 seconds
 
             }, 200);
 
