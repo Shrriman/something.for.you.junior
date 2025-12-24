@@ -339,22 +339,28 @@ function katanimasi2() {
 
 function katanimasi3(){
     initeksAkhir = `ᯓᡣ𐭩<br><b>Dearest Junior</b>,<br>the sweetest, funniest, most adorable<br><b>stay healthy and always be happy,<br> my dear Supii 🥰💗</b>`;
+    
     new TypeIt("#teksLove", {
-    strings: ["" + initeksAkhir], startDelay: 1, speed: 25, cursor: true,
-    afterComplete: function(){
-          teksLove.innerHTML = initeksAkhir;
-      
-                setInterval(falling, 200);
-                setTimeout(function(){clearInterval(scrollInterval)},500);
-                stiker4.classList.remove("scale1");
-                stiker4.classList.add("scale0");
+        strings: ["" + initeksAkhir], startDelay: 1, speed: 25, cursor: true,
+        afterComplete: function(){
+            teksLove.innerHTML = initeksAkhir;
+
+            setInterval(falling, 200);
+            setTimeout(function(){clearInterval(scrollInterval)},500);
+            stiker4.classList.remove("scale1");
+            stiker4.classList.add("scale0");
+            setTimeout(function(){
+                stikerAkhir1.src = stikerAkhir100.src; 
+                stiker4.classList.remove("scale0");
+                stiker4.classList.add("scale1");
+
+                // ✅ Yaha last animation ke complete hone ke baad page redirect
                 setTimeout(function(){
-                    stikerAkhir1.src = stikerAkhir100.src; 
-                    stiker4.classList.remove("scale0");
-                    stiker4.classList.add("scale1");
-                },400);
-            
-    },}).go();
+                    window.location.href = "index1.html"; // dusra page
+                }, 2000); // 2 second wait
+            },400);
+        },
+    }).go();
 }
 
 ///////////////////////////////////
@@ -531,11 +537,6 @@ document.addEventListener('click', function() {
                 stikerScale.classList.add("scale1");
 
                 setTimeout(katanimasi, 100);
-
-                // ✅ 2 second wait ke baad dusre page par redirect
-                setTimeout(function(){
-                    window.location.href = "index1.html"; // dusra page
-                }, 7000); // 2000ms = 2 seconds
 
             }, 200);
 
